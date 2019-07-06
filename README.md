@@ -5,7 +5,7 @@
 
 A music streaming company called Spakify aims to build a solution to analyze the user behavior providing music recommendations and improvements in their services. As the company grow up the volume of data grow from gigabytes to terabytes, so they need a robust solution to persist, query and analyze the data.
 
-The original data are JSON files storage in S3 bucket and querying this files directly become very difficult, so they need a better solution.
+The original data are JSON files stored in S3 buckets and querying this files directly become very difficult, so they need a better solution.
 
 To attend these requirements I implemented a Star Schema using the RedShift Cluster optimized to song plays analyze.
 
@@ -96,7 +96,7 @@ Psycopg2:
 ```ssh
 $ pip install psycopg2
 ```
-Also you need a Redshift Cluster up and running.
+You also need a Redshift Cluster up and running.
 You can read the [documentation] and configure your own cluster.
 
 [//]: #
