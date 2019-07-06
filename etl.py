@@ -1,9 +1,17 @@
+"""
+This file implements the
+ETL process.
+"""
+
 import configparser
 import psycopg2
 from sql_queries import copy_table_queries, insert_table_queries
 
 
 def load_staging_tables(cur, conn):
+    """
+    Load JSON files to staging_tables.
+    """
     for query in copy_table_queries:
         print('Load Staging {}'.format(query))
         cur.execute(query)
@@ -11,6 +19,12 @@ def load_staging_tables(cur, conn):
 
 
 def insert_tables(cur, conn):
+     """
+    Process Song files.
+    Load Data into final tables.
+    Clean, transform and insert into
+    song and artist tables.
+    """
     for query in insert_table_queries:
         print('Insert Tables {}'.format(query))
         cur.execute(query)
@@ -18,6 +32,8 @@ def insert_tables(cur, conn):
 
 
 def main():
+    """Main Function"""
+    
     config = configparser.ConfigParser()
     config.read('dwh.cfg')
 
